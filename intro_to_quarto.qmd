@@ -20,11 +20,28 @@ nocite: |
 
 <hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
 
+::: columns
+
+::: column
 **Luc Clair**\
 [***l.clair\@uwinnipeg.ca***]{style="font-size:0.75em;"}\
 [Universiry of Winnipeg]{style="font-size:0.75em;"}
 
 March 3, 2025
+
+:::
+
+::: column
+
+:::{.nostretch}
+
+![](adobe-express-qr-code.png){width=30%}
+:::
+
+
+:::
+
+:::
 
 # Introduction {.title-slide}
 
