@@ -1,0 +1,657 @@
+---
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Luc Clair
+    email: l.clair@uwinnipeg.ca
+    affiliations: University of Winnipeg
+date: March 3, 2025
+bibliography: references.bib
+nocite: |
+  @*
+---
+
+#  {.title-slide}
+
+[An Introduction to Quarto]{style="font-size: 2em;"}\
+[*Writing Reproducible Scientific Reports*]{style="font-size: 1.25em; color: steelblue; margin-top: -0.5in;"}
+
+<hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
+
+**Luc Clair**\
+[***l.clair\@uwinnipeg.ca***]{style="font-size:0.75em;"}\
+[Universiry of Winnipeg]{style="font-size:0.75em;"}
+
+March 3, 2025
+
+# Introduction {.title-slide}
+
+<hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
+
+## Introduction
+
+-   Quarto is an open-source tool designed for creating dynamic documents, reports, presentations, and websites
+-   It integrates with various programming languages and provides a unified framework for combining code, narrative text, and data visualization
+-   Quarto is particularly useful for data science, research, and technical communication
+
+## Scientific Reports
+
+-   What makes a report scientific?
+
+    > -   Structured format
+    > -   Evidence-based, relies on empirical data, experiments, or observational data
+    > -   Uses quatitative or qualitative analysis to support claims
+    > -   Replicability
+    > -   Use of figures, tables, and equations
+    > -   Citations and References
+
+## Document Preparation Systems
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+# Create a data frame
+software_table <- data.frame(
+  Software = c("LaTeX", "Sweave", "R Markdown", "Bookdown", "Quarto"),
+  Type = c(
+    "Typesetting System", 
+    "Literate Programming Tool", 
+    "Reproducible Reporting System", 
+    "Reproducible Publishing System", 
+    "Reproducible Publishing System"
+  ),
+  "Primary Use" = c(
+    "High-quality academic documents", 
+    "Embedding R code in LaTeX", 
+    "Dynamic reports with R", 
+    "Writing books, theses, and long-form documents", 
+    "Multi-language scientific publishing (reports, books, blogs, presentations)"
+  ),
+  "Output Formats" = c(
+    "PDF, Beamer", 
+    "PDF, Beamer", 
+    "HTML, PDF, Word, etc.", 
+    "HTML, PDF, EPUB, Word, etc.", 
+    "HTML, PDF, Word, PPTX, EPUB, etc."
+  ),
+check.names = FALSE  
+)
+
+# Generate the table using kable
+kable(software_table)|>
+  kable_styling(bootstrap_options = c("striped"), font_size = 20)|>
+  column_spec(1,width_min = "1.3in")
+
+```
+
+## Quarto Output Formats
+
+-   Quarto documents can be rendered into multiple formats:
+
+    > -   Documents: Hypertext Markup Language (HTML), PDF, and Word
+    > -   Presentations: Reveal.js, Beamer, and PowerPoint
+    > -   Interactive: Shiny, Observable JS
+
+> -   You can refine the look of your document based on the format chosen
+> -   Today's talk will focus on PDF output and how it compares to LaTeX, however, much of the syntax will translate to the other formats
+
+## Output Formats (cont'd)
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+tbl_img <- data.frame(
+  PDF = "",
+  HTML = "",
+  Word = ""
+)
+
+kbl(tbl_img, format = "pipe", align = c("c","c","c")) |> 
+  kable_paper(full_width = F) |>
+  column_spec(1, width = "15em", image = spec_image(c("images/fig_1_pdf.png"), 750,750))|>
+  column_spec(2, width = "15em", image = spec_image(c("images/fig_1_html.png"), 750,750))|>
+  column_spec(3, width = "15em", image = spec_image(c("images/fig_1_docx.png"), 750,750))
+
+```
+
+## Editors
+
+-   Quarto documents can be created and edited using a number of code editors, e.g., VS Code, R Studio, Jupyter, Neovim, and text editors (e.g., emacs)
+
+-   The talk today will focus on R Studio
+
+## Software
+
+-   Installation order:
+
+    > -   R: <https://cran.r-project.org>
+    > -   R Studio: <https://posit.co/download/rstudio-desktop/>
+    > -   TeX (Follow Quarto's guide for TeX installation: <https://quarto.org/docs/output-formats/pdf-engine.html>\])
+
+> -   Quarto is automatically installed when you install R Studio
+
+## R Studio
+
+![](images/rstudio.png)
+
+# Workflow {.title-slide}
+
+<hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
+
+## Proposed Workflow
+
+1.  Create a new Quarto project
+
+    > -   Not necessary to create a new project
+    > -   However, it is a good habit to get into to improve your workflow
+
+::: incremental
+2.  Create a new Quarto document
+    -   R Studio will automatically create a new Quarto document when you create a new Quarto project
+    -   There are a myriad of ways to create new Quarto document in R Studio
+:::
+
+## Creating a New Project
+
+-   Click *Project (None)\>New Project...* from the menu in the top right-hand corner
+
+![](images/new_project_1.png){fig-align="center"}
+
+## Creating a New Project (cont'd)
+
+-   Click *New Directory*
+
+![](images/new_project_2.png){fig-align="center"}
+
+## Creating a New Project (cont'd)
+
+![](images/92uiup.jpg){fig-align="center"}
+
+## Creating a New Project (cont'd)
+
+-   Click *Quarto Project*
+
+![](images/new_project_3.png){fig-align="center"}
+
+## Creating a New Project (cont'd)
+
+-   Name your directory
+
+-   Click *Create Project*
+
+![](images/new_project_4.png){fig-align="center"}
+
+## Creating a New Project (cont'd)
+
+![](images/new_project_5.png){fig-align="center"}
+
+## Creating a New Project (cont'd)
+
+-   For now, let's switch to the *Source* window
+
+![](images/new_project_7.png){fig-align="center"}
+
+# Elements of a Quarto Document {.title-slide}
+
+<hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
+
+## YAML Metadata
+
+-   Metadata: data about data
+
+![](images/yaml_1.png)
+
+> -   The header at the top of the document contains metadata settings
+> -   Defines title, author, date, format, options, and more
+
+## YAML Metadata (cont'd)
+
+-   Similar to the *preamble* of a LaTeX document
+
++------------------------------------+--------------------------------+
+| LaTeX                              | Quarto                         |
++====================================+================================+
+| ``` latex                          | ``` quarto                     |
+| \documentclass[11pt,reqno]{amsart} | ---                            |
+| \title{My Document}                | title: "My Document"           |
+| \date{March 3, 2025}               | date: "March 3, 2025"          |
+| \author{John Doe}                  | author: "John Doe"             |
+| \begin{document}                   | bibliography:mybib.bib         |
+| \section{Introduction}             | format: pdf                    |
+| \bibliography{mybib}               | ---                            |
+| \end{document}                     | # Introduction                 |
+| ```                                | ```                            |
++------------------------------------+--------------------------------+
+
+## Text Content
+
+-   The body of the document is written using *Markdown*
+
+::: incremental
+-   Supports headings, lists, bold/italic text, links, images, and equations
+    -   More on equations later
+:::
+
+## Text Content
+
+### Headings
+
++---------------------------+-----------------------+
+| LaTeX                     | Quarto                |
++===========================+=======================+
+| ``` latex                 | ``` quarto            |
+| \section{Heading 1}       | # Heading 1           |
+| \subsection{Heading 2}    | ## Heading 2          |
+| \subsubsection{Heading 3} | ### Heading 3         |
+| ```                       | ```                   |
++---------------------------+-----------------------+
+
+## Text Content
+
+### Lists
+
++------------------------+--------------------+
+| LaTeX                  | Quarto             |
++========================+====================+
+| ``` latex              | ``` quarto         |
+| \begin{itemize}        | - Item 1           |
+|   \item Item 1         | - Item 2           |
+|   \item Item 2         |     - Sub-item 1   |
+|     \begin{itemize}    |     - Sub-item 2   |
+|       \item Sub-item 1 | - Item 3           |
+|       \item Sub-item 2 | ```                |
+|     \end{itemize}      |                    |
+|   \item Item 3         |                    |
+| \end{itemize}          |                    |
+| ```                    |                    |
++------------------------+--------------------+
+
+## Text Content
+
+### Text formatting
+
++-------------------------------------------+-----------------------------------------+
+| Quarto                                    | Output                                  |
++===========================================+=========================================+
+| `*italics*, **bold**, ***bold italics***` | *italics*, **bold**, ***bold italics*** |
++-------------------------------------------+-----------------------------------------+
+| `superscripts^2^/subscripts~2~`           | superscripts^2^ / subscripts~2~         |
++-------------------------------------------+-----------------------------------------+
+| `~~strikethrough~~`                       | ~~strikethrough~~                       |
++-------------------------------------------+-----------------------------------------+
+| `` `verbatim code` ``                     | `verbatim code`                         |
++-------------------------------------------+-----------------------------------------+
+
+## Text Content
+
+### Equations
+
+-   While Quarto uses much of the same syntax as LaTeX for writing mathematical expressions, there some important differences in terms of cross-referencing and using aligned equations.
+
+-   Equations are written using LaTeX syntax i.e.,
+
+    > -   Wrapping equations in `$` for in-line equations, e.g., `$y=f(x)$` gives $y=f(x)$
+    > -   Wrapping equations in `$$` for display math, e.g., `$$y=f(x)$$` gives $$y=f(x)$$
+
+## Text Content
+
+### Equations (cont'd)
+
+-   Note: Math mode is only denoted by `$` or `$$`
+
+> -   LaTeX commands (e.g., `\begin{equation}...\end{equation}`) still work, however, they will only appear in PDF output
+
+> -   For numbered equations in Quarto, you have to add a label, which is then used for cross-referencing
+
+## Text Content
+
+### Equations (cont'd)
+
+-   To add a label, add `{#eq-label}` after an equation in display mode
+
+    > -   It is important to remember the `eq-` prefix
+
+::: incremental
+-   To reference the equation, simply use `@eq-label`
+-   E.g., "`@eq-demo` defines the model: `$$y=f(x)$$ {#eq-demo}`" gives @eq-demo defines the model: $$y=f(x)$$ {#eq-demo}
+:::
+
+## Text Content
+
+### Call-Out Blocks
+
+-   Create call-out blocks for notes, tips, definitions, theorems, lemmas, warnings, etc.
+-   E.g., Definition
+
+``` quarto
+::: {.callout-tip}
+## Definition
+
+**Quarto** is an open-source, multi-language scientific publishing system that allows users to create dynamic, reproducible documents, presentations, books, and websites using code and markdown.
+:::
+```
+
+## Text Content
+
+### Call-Out Blocks (cont'd)
+
+::: callout-tip
+## Definition
+
+**Quarto** is an open-source, multi-language scientific publishing system that allows users to create dynamic, reproducible documents, presentations, books, and websites using code and markdown.
+:::
+
+## Code Chunks
+
+-   Code chunks allow running R, Python, Julia, or other languages inside the document
+
+-   Two ways to insert an R code chunk:
+
+    1.  Begin with triple backticks ```` ```{r} ````
+    2.  Add a chunk using the tool in R Studio
+
+## Code Chunks (cont'd)
+
+![](images/chunk_1.png)
+
+## Code Chunks (cont'd)
+
+-   E.g., producing a histogram of a standard normal variable $X$
+
+```` markdown
+`r ''````{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "Histogram of $X$"
+#| dev: 'tikz'
+
+# For nice looking figures LaTeX figures install tikzDevice
+# install.packages("tikzDevice")
+
+set.seed(42) # sets the seed so that the results will stay the same
+
+x <- rnorm(1000,0,1) # Generate a standard normal variable
+
+# Create a histogram
+hist(x,
+     freq = FALSE,
+     ylab = "Probability",
+     xlab = "$X$",
+     main = "")
+```
+````
+
+## Code Chunks (cont'd)
+
+![](images/hist.png)
+
+## Figures and Tables
+
+-   Quarto supports dynamic figures and tables
+
+> -   I could devote entire seminars to figures and tables, so here are some of the basics
+
+::: incremental
+-   For more info, please see Quarto's guide:
+    -   Figures: <https://quarto.org/docs/authoring/figures.html>
+    -   Tables: <https://quarto.org/docs/authoring/tables.html>
+:::
+
+## Figures and Tables
+
+### Figures
+
+-   Two (of many) ways to insert images/figures into a Quarto document
+    1.  Markdown syntax
+    2.  R code (Knitr)
+
+## Figures and Tables
+
+### Markdown Figures Syntax
+
+-   The markdown syntax for adding an image is `![caption](FilePath)`
+
+> -   E.g.,`![University of Winnipeg Logo](logo.png)`
+
+## Figures and Tables
+
+### Markdown Figures Syntax (cont'd)
+
+::: nostretch
+![](images/logo_pdf.png){fig-align="center" width="50%"}
+:::
+
+## Figures and Tables
+
+### Inserting Images Using knitr
+
+-   `knitr` is the R package that allows us to combine computer languages (statistical software code) and output markup languages (e.g., LaTeX, HTML).
+
+> -   `knitr` has a built-in command for including images called `include_graphics("path")`.
+
+> -   Inputting images using a code chunk allows for greater customization of the image output.
+
+## Figures and Tables
+
+### Inserting Images Using knitr (cont'd)
+
+-   For example, we can input the UW Logo .png file using `knitr`
+
+```` markdown
+`r ''````{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "University of Winnipeg Logo" 
+
+#> We can call a command from a package using 
+#> package.name::command
+
+knitr::include_graphics("logo.png")
+```
+````
+
+## Figures and Tables
+
+### Tables
+
+-   There are two types of tables we want to consider.
+    1.  Tables summarizing information in the text.
+        -   Simple tables and grid tables.
+    2.  Tables summarizing R output within R chunks.
+        -   `kable()` is available in the `knit` package. To use it, we can use `knitr::kable().`
+
+## Figures and Tables
+
+### Creating Tables Using R Studio's Visual Editor
+
+-   R Studio **Visual editor** facilitates the creation of grid tables.
+-   To create a table using the *Visual* editor, click "Table" and select "Insert table" from the drop-down menu on the top of the Quarto document.
+
+![Visual Editor Menu](images/menu.png)
+
+## Figures and Tables
+
+### Creating Tables Using R Studio's Visual Editor (cont'd)
+
+-   Now you have a table that you can edit similar to a Word table. **Right click** your mouse over any cell to see your options
+
+![Table Options](images/table%20menu.png){width="50%"}
+
+## Figures and Tables
+
+### Creating Tables Using R Studio's Visual Editor (cont'd)
+
+-   Note the **Align Column** option for simple alignment
+-   Make **Col 2** center aligned
+
+![Setting Table Column Alignment](images/table_alignment.png){width="50%"}
+
+## Figures and Tables
+
+### Creating Tables Using R Studio's Visual Editor (cont'd)
+
+-   You can add longer texts to each cell, including bulleted and numbered lists
+
+> -   However, we must still use some caution as editing markdown tables is not as straightforward as editing word tables
+
+> -   Another editor is [TablesGenerator](https://www.tablesgenerator.com/markdown_tables), which allows you to edit tables in your browser
+
+## Figures and Tables
+
+### Producing Tables using R Packages
+
+-   The R package we will be using is `knitr`, specifically, the command `kable()`
+
+> -   `kable()` converts any data frame in R into a pipe table
+
+> -   A data frame is another word for dataset; however, some output from our analyses will be saved a a data frame
+
+> -   `kable()` makes it easy to print this output
+
+## Figures and Tables
+
+### Producing Tables using R Packages (cont'd)
+
+-   E.g.,
+
+```` markdown
+`r ''````{r}
+#| echo: false
+#| tbl-cap: "`kable()` Table"
+
+d <- data.frame("Header 1" = c("Left",1),
+                "Header 2" = c("Center",2), 
+                "Header 3" = c("Right",3),
+                check.names = FALSE) # check.names makes sure that the headers don't change
+
+knitr::kable(d,
+             format = "pipe",
+             booktabs = T,
+             escape = FALSE,
+             align = c("l","c","r"), # Set column alignment
+             longtable= T) # Keeps the table where you want it in the document 
+```
+````
+
+## Figures and Tables
+
+### Producing Tables using R Packages (cont'd)
+
+::: nostretch
+![](images/table_knitr.png){fig-align="center" width="50%"}
+:::
+
+## Figures and Tables
+
+### Cross Referencing
+
+-   Add labels to figures using the `#fig-` prefix and add labels to tables using the `#tbl-` prefix
+
+> -   E.g., `![caption](FilePath){#fig-label}` can then be referenced by `@fig-label`.
+
+> -   Alternatively, if you are adding a figure or table using R, add the execution command `label` to your code chunk, i.e., `#| label: "fig-label"`
+
+## Referencing and Citations
+
+-   An important aspect of academic writing is citing work that is not your own. Quarto documents can generate citations and bibliographies using BibLaTeX `.bib` or BibTeX `.bibtex` files.
+
+> -   Note,do not use a ":" in your citation key for a reference. Only use "-" or "\_". For example `smith_2024`.
+
+## Bibliography
+
+Once you have created a `.bib` file with your references, you can add a bibliography to your Quarto document using `bibliography:` YAML metadata field. E.g.,
+
+```         
+---
+title: "demo"
+bibliography: refs.bib
+---
+```
+
+## Citation Syntax
+
+-   To cite a reference saved in your `.bib` file, use the syntax `[@cite-key]`.
+
+> -   Note that the citation is in a square bracket. If you have more than one citation, separate each cite key by a semi-colon.
+
+## Citation Syntax
+
++----------------------------------------------+--------------------------------------------+
+| Markdown Format                              | Output                                     |
++==============================================+============================================+
+| Sample text `[see @bravo_2011, pp. 130-135]` | Sample text [see @bravo_2011, pp. 130-135] |
++----------------------------------------------+--------------------------------------------+
+| Sample text `[@bravo_2011; @li_racine_2007]` | Sample text [@bravo_2011; @li_racine_2007] |
++----------------------------------------------+--------------------------------------------+
+
+## Citation Syntax
+
+For in-text citations, simply write `@cite-key`.
+
++-----------------------------------------------+---------------------------------------------+
+| Markdown Format                               | Output                                      |
++===============================================+=============================================+
+| `@aitchison_aitken_1976` developed...         | @aitchison_aitken_1976 developed...         |
++-----------------------------------------------+---------------------------------------------+
+| `@aitchison_aitken_1976 [p.413]` developed... | @aitchison_aitken_1976 [p.413] developed... |
++-----------------------------------------------+---------------------------------------------+
+
+## Citation Style
+
+-   The default citation style is the Chicago Manual of Style
+
+-   Can change the style of your citation using the `csl:` metadata field in the YAML header
+
+-   You may want to change the citation style based on personal preference or based on specified requirements (e.g., academic journal, class project, etc.)
+
+-   E.g.,
+
+``` quarto
+---
+title: "demo"
+bibliography: refs.bib
+csl: nature.csl
+---
+```
+
+## Citation Style
+
+For more citation styles, please visit: <https://www.zotero.org/styles>
+
+## Bibliography Generation
+
+-   To insert a bibliography, simply insert a section with the title `References`
+
+-   If you want to include an appendix after the references include the following in your reference section:
+
+``` quarto
+# References
+
+::: {#refs}
+:::
+```
+
+# Advantages/Disadvantages of Quarto
+
+## Advantages of Quarto
+
+-   Simplified syntax
+
+::: incremental
+-   Integration with R, Python, and Julia
+-   Automated Citations and Bibliographies
+-   Multi-format output from a single source
+-   Automatic cross-referencing for figures, tables and equations
+-   Easy table creation
+:::
+
+## Disadvantsages of Quarto
+
+## References
+
+::: {#refs}
+:::

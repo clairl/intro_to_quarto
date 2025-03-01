@@ -1,0 +1,408 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "This repository contains the files for my workshop entitled “An Introduction to Quarto: Writing Reproducible Scientific Reports”.\nThe rendered slides can be found here:."
+  },
+  {
+    "objectID": "intro_to_quarto.html#introduction-1",
+    "href": "intro_to_quarto.html#introduction-1",
+    "title": "",
+    "section": "Introduction",
+    "text": "Introduction\n\nQuarto is an open-source tool designed for creating dynamic documents, reports, presentations, and websites\nIt integrates with various programming languages and provides a unified framework for combining code, narrative text, and data visualization\nQuarto is particularly useful for data science, research, and technical communication"
+  },
+  {
+    "objectID": "intro_to_quarto.html#scientific-reports",
+    "href": "intro_to_quarto.html#scientific-reports",
+    "title": "",
+    "section": "Scientific Reports",
+    "text": "Scientific Reports\n\nWhat makes a report scientific?\n\nStructured format\nEvidence-based, relies on empirical data, experiments, or observational data\nUses quatitative or qualitative analysis to support claims\nReplicability\nUse of figures, tables, and equations\nCitations and References"
+  },
+  {
+    "objectID": "intro_to_quarto.html#document-preparation-systems",
+    "href": "intro_to_quarto.html#document-preparation-systems",
+    "title": "",
+    "section": "Document Preparation Systems",
+    "text": "Document Preparation Systems\n\n\n\n\n\nSoftware\nType\nPrimary Use\nOutput Formats\n\n\n\n\nLaTeX\nTypesetting System\nHigh-quality academic documents\nPDF, Beamer\n\n\nSweave\nLiterate Programming Tool\nEmbedding R code in LaTeX\nPDF, Beamer\n\n\nR Markdown\nReproducible Reporting System\nDynamic reports with R\nHTML, PDF, Word, etc.\n\n\nBookdown\nReproducible Publishing System\nWriting books, theses, and long-form documents\nHTML, PDF, EPUB, Word, etc.\n\n\nQuarto\nReproducible Publishing System\nMulti-language scientific publishing (reports, books, blogs, presentations)\nHTML, PDF, Word, PPTX, EPUB, etc."
+  },
+  {
+    "objectID": "intro_to_quarto.html#quarto-output-formats",
+    "href": "intro_to_quarto.html#quarto-output-formats",
+    "title": "",
+    "section": "Quarto Output Formats",
+    "text": "Quarto Output Formats\n\nQuarto documents can be rendered into multiple formats:\n\nDocuments: Hypertext Markup Language (HTML), PDF, and Word\nPresentations: Reveal.js, Beamer, and PowerPoint\nInteractive: Shiny, Observable JS\n\n\n\nYou can refine the look of your document based on the format chosen\nToday’s talk will focus on PDF output and how it compares to LaTeX, however, much of the syntax will translate to the other formats"
+  },
+  {
+    "objectID": "intro_to_quarto.html#output-formats-contd",
+    "href": "intro_to_quarto.html#output-formats-contd",
+    "title": "",
+    "section": "Output Formats (cont’d)",
+    "text": "Output Formats (cont’d)\n\n\n\n\n\nPDF\nHTML\nWord"
+  },
+  {
+    "objectID": "intro_to_quarto.html#editors",
+    "href": "intro_to_quarto.html#editors",
+    "title": "",
+    "section": "Editors",
+    "text": "Editors\n\nQuarto documents can be created and edited using a number of code editors, e.g., VS Code, R Studio, Jupyter, Neovim, and text editors (e.g., emacs)\nThe talk today will focus on R Studio"
+  },
+  {
+    "objectID": "intro_to_quarto.html#software",
+    "href": "intro_to_quarto.html#software",
+    "title": "",
+    "section": "Software",
+    "text": "Software\n\nInstallation order:\n\nR: https://cran.r-project.org\nR Studio: https://posit.co/download/rstudio-desktop/\nTeX (Follow Quarto’s guide for TeX installation: https://quarto.org/docs/output-formats/pdf-engine.html])\n\n\n\nQuarto is automatically installed when you install R Studio"
+  },
+  {
+    "objectID": "intro_to_quarto.html#r-studio",
+    "href": "intro_to_quarto.html#r-studio",
+    "title": "",
+    "section": "R Studio",
+    "text": "R Studio"
+  },
+  {
+    "objectID": "intro_to_quarto.html#proposed-workflow",
+    "href": "intro_to_quarto.html#proposed-workflow",
+    "title": "",
+    "section": "Proposed Workflow",
+    "text": "Proposed Workflow\n\nCreate a new Quarto project\n\nNot necessary to create a new project\nHowever, it is a good habit to get into to improve your workflow\n\n\n\n\nCreate a new Quarto document\n\nR Studio will automatically create a new Quarto document when you create a new Quarto project\nThere are a myriad of ways to create new Quarto document in R Studio"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project",
+    "href": "intro_to_quarto.html#creating-a-new-project",
+    "title": "",
+    "section": "Creating a New Project",
+    "text": "Creating a New Project\n\nClick Project (None)&gt;New Project… from the menu in the top right-hand corner"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project-contd",
+    "href": "intro_to_quarto.html#creating-a-new-project-contd",
+    "title": "",
+    "section": "Creating a New Project (cont’d)",
+    "text": "Creating a New Project (cont’d)\n\nClick New Directory"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project-contd-1",
+    "href": "intro_to_quarto.html#creating-a-new-project-contd-1",
+    "title": "",
+    "section": "Creating a New Project (cont’d)",
+    "text": "Creating a New Project (cont’d)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project-contd-2",
+    "href": "intro_to_quarto.html#creating-a-new-project-contd-2",
+    "title": "",
+    "section": "Creating a New Project (cont’d)",
+    "text": "Creating a New Project (cont’d)\n\nClick Quarto Project"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project-contd-3",
+    "href": "intro_to_quarto.html#creating-a-new-project-contd-3",
+    "title": "",
+    "section": "Creating a New Project (cont’d)",
+    "text": "Creating a New Project (cont’d)\n\nName your directory\nClick Create Project"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project-contd-4",
+    "href": "intro_to_quarto.html#creating-a-new-project-contd-4",
+    "title": "",
+    "section": "Creating a New Project (cont’d)",
+    "text": "Creating a New Project (cont’d)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#creating-a-new-project-contd-5",
+    "href": "intro_to_quarto.html#creating-a-new-project-contd-5",
+    "title": "",
+    "section": "Creating a New Project (cont’d)",
+    "text": "Creating a New Project (cont’d)\n\nFor now, let’s switch to the Source window"
+  },
+  {
+    "objectID": "intro_to_quarto.html#yaml-metadata",
+    "href": "intro_to_quarto.html#yaml-metadata",
+    "title": "",
+    "section": "YAML Metadata",
+    "text": "YAML Metadata\n\nMetadata: data about data\n\n\n\nThe header at the top of the document contains metadata settings\nDefines title, author, date, format, options, and more"
+  },
+  {
+    "objectID": "intro_to_quarto.html#yaml-metadata-contd",
+    "href": "intro_to_quarto.html#yaml-metadata-contd",
+    "title": "",
+    "section": "YAML Metadata (cont’d)",
+    "text": "YAML Metadata (cont’d)\n\nSimilar to the preamble of a LaTeX document\n\n\n\n\n\n\n\n\nLaTeX\nQuarto\n\n\n\n\n\\documentclass[11pt,reqno]{amsart}\n\\title{My Document}\n\\date{March 3, 2025}\n\\author{John Doe}\n\\begin{document}\n\\section{Introduction}\n\\bibliography{mybib}\n\\end{document}\n---\ntitle: \"My Document\"\ndate: \"March 3, 2025\"\nauthor: \"John Doe\"\nbibliography:mybib.bib\nformat: pdf\n---\n# Introduction"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content",
+    "href": "intro_to_quarto.html#text-content",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\n\nThe body of the document is written using Markdown\n\n\n\nSupports headings, lists, bold/italic text, links, images, and equations\n\nMore on equations later"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-1",
+    "href": "intro_to_quarto.html#text-content-1",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nHeadings\n\n\n\n\n\n\n\nLaTeX\nQuarto\n\n\n\n\n\\section{Heading 1}\n\\subsection{Heading 2}\n\\subsubsection{Heading 3}\n# Heading 1\n## Heading 2\n### Heading 3"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-2",
+    "href": "intro_to_quarto.html#text-content-2",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nLists\n\n\n\n\n\n\n\nLaTeX\nQuarto\n\n\n\n\n\\begin{itemize}\n  \\item Item 1\n  \\item Item 2\n    \\begin{itemize}\n      \\item Sub-item 1\n      \\item Sub-item 2\n    \\end{itemize}\n  \\item Item 3\n\\end{itemize}\n- Item 1\n- Item 2\n    - Sub-item 1\n    - Sub-item 2\n- Item 3"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-3",
+    "href": "intro_to_quarto.html#text-content-3",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nText formatting\n\n\n\n\n\n\n\nQuarto\nOutput\n\n\n\n\n*italics*, **bold**, ***bold italics***\nitalics, bold, bold italics\n\n\nsuperscripts^2^/subscripts~2~\nsuperscripts2 / subscripts2\n\n\n~~strikethrough~~\nstrikethrough\n\n\n`verbatim code`\nverbatim code"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-4",
+    "href": "intro_to_quarto.html#text-content-4",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nEquations\n\nWhile Quarto uses much of the same syntax as LaTeX for writing mathematical expressions, there some important differences in terms of cross-referencing and using aligned equations.\nEquations are written using LaTeX syntax i.e.,\n\nWrapping equations in $ for in-line equations, e.g., $y=f(x)$ gives \\(y=f(x)\\)\nWrapping equations in $$ for display math, e.g., $$y=f(x)$$ gives \\[y=f(x)\\]"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-5",
+    "href": "intro_to_quarto.html#text-content-5",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nEquations (cont’d)\n\nNote: Math mode is only denoted by $ or $$\n\n\nLaTeX commands (e.g., \\begin{equation}...\\end{equation}) still work, however, they will only appear in PDF output\n\n\nFor numbered equations in Quarto, you have to add a label, which is then used for cross-referencing"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-6",
+    "href": "intro_to_quarto.html#text-content-6",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nEquations (cont’d)\n\nTo add a label, add {#eq-label} after an equation in display mode\n\nIt is important to remember the eq- prefix\n\n\n\n\nTo reference the equation, simply use @eq-label\nE.g., “@eq-demo defines the model: $$y=f(x)$$ {#eq-demo}” gives Equation 1 defines the model: \\[y=f(x) \\qquad(1)\\]"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-7",
+    "href": "intro_to_quarto.html#text-content-7",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nCall-Out Blocks\n\nCreate call-out blocks for notes, tips, definitions, theorems, lemmas, warnings, etc.\nE.g., Definition\n\n::: {.callout-tip}\n## Definition\n\n**Quarto** is an open-source, multi-language scientific publishing system that allows users to create dynamic, reproducible documents, presentations, books, and websites using code and markdown.\n:::"
+  },
+  {
+    "objectID": "intro_to_quarto.html#text-content-8",
+    "href": "intro_to_quarto.html#text-content-8",
+    "title": "",
+    "section": "Text Content",
+    "text": "Text Content\nCall-Out Blocks (cont’d)\n\n\n\n\n\n\nDefinition\n\n\nQuarto is an open-source, multi-language scientific publishing system that allows users to create dynamic, reproducible documents, presentations, books, and websites using code and markdown."
+  },
+  {
+    "objectID": "intro_to_quarto.html#code-chunks",
+    "href": "intro_to_quarto.html#code-chunks",
+    "title": "",
+    "section": "Code Chunks",
+    "text": "Code Chunks\n\nCode chunks allow running R, Python, Julia, or other languages inside the document\nTwo ways to insert an R code chunk:\n\nBegin with triple backticks ```{r}\nAdd a chunk using the tool in R Studio"
+  },
+  {
+    "objectID": "intro_to_quarto.html#code-chunks-contd",
+    "href": "intro_to_quarto.html#code-chunks-contd",
+    "title": "",
+    "section": "Code Chunks (cont’d)",
+    "text": "Code Chunks (cont’d)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#code-chunks-contd-1",
+    "href": "intro_to_quarto.html#code-chunks-contd-1",
+    "title": "",
+    "section": "Code Chunks (cont’d)",
+    "text": "Code Chunks (cont’d)\n\nE.g., producing a histogram of a standard normal variable \\(X\\)\n\n```{r}\n#| echo: false\n#| eval: true\n#| fig-cap: \"Histogram of $X$\"\n#| dev: 'tikz'\n\n# For nice looking figures LaTeX figures install tikzDevice\n# install.packages(\"tikzDevice\")\n\nset.seed(42) # sets the seed so that the results will stay the same\n\nx &lt;- rnorm(1000,0,1) # Generate a standard normal variable\n\n# Create a histogram\nhist(x,\n     freq = FALSE,\n     ylab = \"Probability\",\n     xlab = \"$X$\",\n     main = \"\")\n```"
+  },
+  {
+    "objectID": "intro_to_quarto.html#code-chunks-contd-2",
+    "href": "intro_to_quarto.html#code-chunks-contd-2",
+    "title": "",
+    "section": "Code Chunks (cont’d)",
+    "text": "Code Chunks (cont’d)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables",
+    "href": "intro_to_quarto.html#figures-and-tables",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\n\nQuarto supports dynamic figures and tables\n\n\nI could devote entire seminars to figures and tables, so here are some of the basics\n\n\n\nFor more info, please see Quarto’s guide:\n\nFigures: https://quarto.org/docs/authoring/figures.html\nTables: https://quarto.org/docs/authoring/tables.html"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-1",
+    "href": "intro_to_quarto.html#figures-and-tables-1",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nFigures\n\nTwo (of many) ways to insert images/figures into a Quarto document\n\nMarkdown syntax\nR code (Knitr)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-2",
+    "href": "intro_to_quarto.html#figures-and-tables-2",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nMarkdown Figures Syntax\n\nThe markdown syntax for adding an image is ![caption](FilePath)\n\n\nE.g.,![University of Winnipeg Logo](logo.png)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-3",
+    "href": "intro_to_quarto.html#figures-and-tables-3",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nMarkdown Figures Syntax (cont’d)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-4",
+    "href": "intro_to_quarto.html#figures-and-tables-4",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nInserting Images Using knitr\n\nknitr is the R package that allows us to combine computer languages (statistical software code) and output markup languages (e.g., LaTeX, HTML).\n\n\nknitr has a built-in command for including images called include_graphics(\"path\").\n\n\nInputting images using a code chunk allows for greater customization of the image output."
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-5",
+    "href": "intro_to_quarto.html#figures-and-tables-5",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nInserting Images Using knitr (cont’d)\n\nFor example, we can input the UW Logo .png file using knitr\n\n```{r}\n#| echo: false\n#| eval: true\n#| fig-cap: \"University of Winnipeg Logo\" \n\n#&gt; We can call a command from a package using \n#&gt; package.name::command\n\nknitr::include_graphics(\"logo.png\")\n```"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-6",
+    "href": "intro_to_quarto.html#figures-and-tables-6",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nTables\n\nThere are two types of tables we want to consider.\n\nTables summarizing information in the text.\n\nSimple tables and grid tables.\n\nTables summarizing R output within R chunks.\n\nkable() is available in the knit package. To use it, we can use knitr::kable()."
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-7",
+    "href": "intro_to_quarto.html#figures-and-tables-7",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nCreating Tables Using R Studio’s Visual Editor\n\nR Studio Visual editor facilitates the creation of grid tables.\nTo create a table using the Visual editor, click “Table” and select “Insert table” from the drop-down menu on the top of the Quarto document.\n\n\nVisual Editor Menu"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-8",
+    "href": "intro_to_quarto.html#figures-and-tables-8",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nCreating Tables Using R Studio’s Visual Editor (cont’d)\n\nNow you have a table that you can edit similar to a Word table. Right click your mouse over any cell to see your options\n\n\nTable Options"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-9",
+    "href": "intro_to_quarto.html#figures-and-tables-9",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nCreating Tables Using R Studio’s Visual Editor (cont’d)\n\nNote the Align Column option for simple alignment\nMake Col 2 center aligned\n\n\nSetting Table Column Alignment"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-10",
+    "href": "intro_to_quarto.html#figures-and-tables-10",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nCreating Tables Using R Studio’s Visual Editor (cont’d)\n\nYou can add longer texts to each cell, including bulleted and numbered lists\n\n\nHowever, we must still use some caution as editing markdown tables is not as straightforward as editing word tables\n\n\nAnother editor is TablesGenerator, which allows you to edit tables in your browser"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-11",
+    "href": "intro_to_quarto.html#figures-and-tables-11",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nProducing Tables using R Packages\n\nThe R package we will be using is knitr, specifically, the command kable()\n\n\nkable() converts any data frame in R into a pipe table\n\n\nA data frame is another word for dataset; however, some output from our analyses will be saved a a data frame\n\n\nkable() makes it easy to print this output"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-12",
+    "href": "intro_to_quarto.html#figures-and-tables-12",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nProducing Tables using R Packages (cont’d)\n\nE.g.,\n\n```{r}\n#| echo: false\n#| tbl-cap: \"`kable()` Table\"\n\nd &lt;- data.frame(\"Header 1\" = c(\"Left\",1),\n                \"Header 2\" = c(\"Center\",2), \n                \"Header 3\" = c(\"Right\",3),\n                check.names = FALSE) # check.names makes sure that the headers don't change\n\nknitr::kable(d,\n             format = \"pipe\",\n             booktabs = T,\n             escape = FALSE,\n             align = c(\"l\",\"c\",\"r\"), # Set column alignment\n             longtable= T) # Keeps the table where you want it in the document \n```"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-13",
+    "href": "intro_to_quarto.html#figures-and-tables-13",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nProducing Tables using R Packages (cont’d)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#figures-and-tables-14",
+    "href": "intro_to_quarto.html#figures-and-tables-14",
+    "title": "",
+    "section": "Figures and Tables",
+    "text": "Figures and Tables\nCross Referencing\n\nAdd labels to figures using the #fig- prefix and add labels to tables using the #tbl- prefix\n\n\nE.g., ![caption](FilePath){#fig-label} can then be referenced by @fig-label.\n\n\nAlternatively, if you are adding a figure or table using R, add the execution command label to your code chunk, i.e., #| label: \"fig-label\""
+  },
+  {
+    "objectID": "intro_to_quarto.html#referencing-and-citations",
+    "href": "intro_to_quarto.html#referencing-and-citations",
+    "title": "",
+    "section": "Referencing and Citations",
+    "text": "Referencing and Citations\n\nAn important aspect of academic writing is citing work that is not your own. Quarto documents can generate citations and bibliographies using BibLaTeX .bib or BibTeX .bibtex files.\n\n\nNote,do not use a “:” in your citation key for a reference. Only use “-” or “_”. For example smith_2024."
+  },
+  {
+    "objectID": "intro_to_quarto.html#bibliography",
+    "href": "intro_to_quarto.html#bibliography",
+    "title": "",
+    "section": "Bibliography",
+    "text": "Bibliography\nOnce you have created a .bib file with your references, you can add a bibliography to your Quarto document using bibliography: YAML metadata field. E.g.,\n---\ntitle: \"demo\"\nbibliography: refs.bib\n---"
+  },
+  {
+    "objectID": "intro_to_quarto.html#citation-syntax",
+    "href": "intro_to_quarto.html#citation-syntax",
+    "title": "",
+    "section": "Citation Syntax",
+    "text": "Citation Syntax\n\nTo cite a reference saved in your .bib file, use the syntax [@cite-key].\n\n\nNote that the citation is in a square bracket. If you have more than one citation, separate each cite key by a semi-colon."
+  },
+  {
+    "objectID": "intro_to_quarto.html#citation-syntax-1",
+    "href": "intro_to_quarto.html#citation-syntax-1",
+    "title": "",
+    "section": "Citation Syntax",
+    "text": "Citation Syntax\n\n\n\n\n\n\n\nMarkdown Format\nOutput\n\n\n\n\nSample text [see @bravo_2011, pp. 130-135]\nSample text (see Bravo, Huynh, and Jacho-Chávez 2011, 130–35)\n\n\nSample text [@bravo_2011; @li_racine_2007]\nSample text (Bravo, Huynh, and Jacho-Chávez 2011; Li and Racine 2007)"
+  },
+  {
+    "objectID": "intro_to_quarto.html#citation-syntax-2",
+    "href": "intro_to_quarto.html#citation-syntax-2",
+    "title": "",
+    "section": "Citation Syntax",
+    "text": "Citation Syntax\nFor in-text citations, simply write @cite-key.\n\n\n\n\n\n\n\nMarkdown Format\nOutput\n\n\n\n\n@aitchison_aitken_1976 developed…\nAitchison and Aitken (1976) developed…\n\n\n@aitchison_aitken_1976 [p.413] developed…\nAitchison and Aitken (1976, 413) developed…"
+  },
+  {
+    "objectID": "intro_to_quarto.html#citation-style",
+    "href": "intro_to_quarto.html#citation-style",
+    "title": "",
+    "section": "Citation Style",
+    "text": "Citation Style\n\nThe default citation style is the Chicago Manual of Style\nCan change the style of your citation using the csl: metadata field in the YAML header\nYou may want to change the citation style based on personal preference or based on specified requirements (e.g., academic journal, class project, etc.)\nE.g.,\n\n---\ntitle: \"demo\"\nbibliography: refs.bib\ncsl: nature.csl\n---"
+  },
+  {
+    "objectID": "intro_to_quarto.html#citation-style-1",
+    "href": "intro_to_quarto.html#citation-style-1",
+    "title": "",
+    "section": "Citation Style",
+    "text": "Citation Style\nFor more citation styles, please visit: https://www.zotero.org/styles"
+  },
+  {
+    "objectID": "intro_to_quarto.html#bibliography-generation",
+    "href": "intro_to_quarto.html#bibliography-generation",
+    "title": "",
+    "section": "Bibliography Generation",
+    "text": "Bibliography Generation\n\nTo insert a bibliography, simply insert a section with the title References\nIf you want to include an appendix after the references include the following in your reference section:\n\n# References\n\n::: {#refs}\n:::"
+  },
+  {
+    "objectID": "intro_to_quarto.html#advantages-of-quarto",
+    "href": "intro_to_quarto.html#advantages-of-quarto",
+    "title": "",
+    "section": "Advantages of Quarto",
+    "text": "Advantages of Quarto\n\nSimplified syntax\n\n\n\nIntegration with R, Python, and Julia\nAutomated Citations and Bibliographies\nMulti-format output from a single source\nAutomatic cross-referencing for figures, tables and equations\nEasy table creation"
+  },
+  {
+    "objectID": "intro_to_quarto.html#disadvantsages-of-quarto",
+    "href": "intro_to_quarto.html#disadvantsages-of-quarto",
+    "title": "",
+    "section": "Disadvantsages of Quarto",
+    "text": "Disadvantsages of Quarto"
+  },
+  {
+    "objectID": "intro_to_quarto.html#references",
+    "href": "intro_to_quarto.html#references",
+    "title": "",
+    "section": "References",
+    "text": "References\n\n\nAitchison, J., and C. G. G Aitken. 1976. “Multivariate Binary Discrimination by the Kernel Method.” Biometrica 63: 413–20.\n\n\nBravo, F., K. P. Huynh, and D. T. Jacho-Chávez. 2011. “Average Derivative Estimation with Missing Responses.” In Missing Data Methods: Cross-Sectional Methods and Applications, edited by D. M. Drukker, 1st ed., 27A:129–54. Emerald Group Publishing Limited.\n\n\nLi, Qi, and Jeffrey S. Racine. 2007. Nonparametric Econometrics. Princeton, NJ: Princeton University Press.\n\n\nPosit. 2025. “Quarto Guide.” https://quarto.org/docs/guide/.\n\n\nRacine, Jeffrey. 2017. “Energy, Economics & Replication.” Department of Economics Working Papers 2017-02. McMaster University. https://ideas.repec.org/p/mcm/deptwp/2017-02.html.\n\n\nYihui Xie, Emily Riederer, Christophe Dervieux. 2024. “10.1 the Function Knitr::kable() | r Markdown Cookbook.” https://bookdown.org/yihui/rmarkdown-cookbook/kable.html.\n\n\nZhu, Hao. 2024a. “Create Awesome LaTeX Table with Knitr::kable and kableExtra.” 2024. https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf.\n\n\n———. 2024b. “Create Awesome HTML Table with Knitr::kable and kableExtra.” https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html."
+  }
+]

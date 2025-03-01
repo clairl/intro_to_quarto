@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: ""
+  navbar:
+    left:
+      - href: intro_to_quarto.qmd
+        text: "Intro to Quarto"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
