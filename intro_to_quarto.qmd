@@ -24,7 +24,7 @@ nocite: |
 ::: column
 **Luc Clair**\
 [***l.clair\@uwinnipeg.ca***]{style="font-size:0.75em;"}\
-[Universiry of Winnipeg]{style="font-size:0.75em;"}
+[University of Winnipeg]{style="font-size:0.75em;"}
 
 March 3, 2025
 :::
