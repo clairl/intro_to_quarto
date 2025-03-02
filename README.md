@@ -2,4 +2,4 @@ This repository contains the files for my workshop entitled "An Introduction to 
 
 The rendered slides can be viewed [here](https://lclair.ca/intro_to_quarto/intro_to_quarto.html#/section).
 
-![]("images/title_slide.png")
+[![caption](images/title_slide.png)](https://lclair.ca/intro_to_quarto/intro_to_quarto.html#/section) 
