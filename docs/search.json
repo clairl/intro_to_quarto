@@ -25,7 +25,7 @@
     "href": "intro_to_quarto.html#document-preparation-systems",
     "title": "",
     "section": "Document Preparation Systems",
-    "text": "Document Preparation Systems\n\n\n\n\n\nSoftware\nType\nPrimary Use\nOutput Formats\n\n\n\n\nLaTeX\nTypesetting System\nHigh-quality academic documents\nPDF, Beamer\n\n\nSweave\nLiterate Programming Tool\nEmbedding R code in LaTeX\nPDF, Beamer\n\n\nR Markdown\nReproducible Reporting System\nDynamic reports with R\nHTML, PDF, Word, etc.\n\n\nBookdown\nReproducible Publishing System\nWriting books, theses, and long-form documents\nHTML, PDF, EPUB, Word, etc.\n\n\nQuarto\nReproducible Publishing System\nMulti-language scientific publishing (reports, books, blogs, presentations)\nHTML, PDF, Word, PPTX, EPUB, etc."
+    "text": "Document Preparation Systems\n\n\n\n\n\nSoftware\nType\nPrimary Use\nOutput Formats\n\n\n\n\nLaTeX\nTypesetting System\nHigh-quality academic documents\nPDF, Beamer\n\n\nSweave\nLiterate Programming Tool\nEmbedding R code in LaTeX\nPDF, Beamer\n\n\nR Markdown\nReproducible Reporting System\nDynamic reports with R\nHTML, PDF, Word, Beamer, PPTX\n\n\nBookdown\nReproducible Publishing System\nWriting books, theses, and long-form documents\nHTML, PDF, Word, Beamer, PPTX, EPUB, etc.\n\n\nQuarto\nReproducible Publishing System\nMulti-language scientific publishing (reports, books, blogs, presentations)\nHTML, PDF, Word, Beamer, PPTX, EPUB, etc."
   },
   {
     "objectID": "intro_to_quarto.html#quarto-output-formats",
@@ -242,7 +242,7 @@
     "href": "intro_to_quarto.html#figures-and-tables-2",
     "title": "",
     "section": "Figures and Tables",
-    "text": "Figures and Tables\nMarkdown Figures Syntax\n\nThe markdown syntax for adding an image is ![caption](FilePath)\n\n\nE.g.,![University of Winnipeg Logo](logo.png)"
+    "text": "Figures and Tables\nMarkdown Figures Syntax\n\nThe markdown syntax for adding an image is ![caption](FilePath)\n\n\nE.g., ![University of Winnipeg Logo](logo.png)"
   },
   {
     "objectID": "intro_to_quarto.html#figures-and-tables-3",
@@ -333,14 +333,14 @@
     "href": "intro_to_quarto.html#referencing-and-citations",
     "title": "",
     "section": "Referencing and Citations",
-    "text": "Referencing and Citations\n\nAn important aspect of academic writing is citing work that is not your own. Quarto documents can generate citations and bibliographies using BibLaTeX .bib or BibTeX .bibtex files.\n\n\nNote,do not use a “:” in your citation key for a reference. Only use “-” or “_”. For example smith_2024."
+    "text": "Referencing and Citations\n\nAn important aspect of academic writing is citing work that is not your own.\n\n\nQuarto documents can generate citations and bibliographies using BibLaTeX .bib or BibTeX .bibtex files.\n\n\nNote, do not use a “:” in your citation key for a reference. Only use “-” or “_”. For example smith_2024."
   },
   {
     "objectID": "intro_to_quarto.html#bibliography",
     "href": "intro_to_quarto.html#bibliography",
     "title": "",
     "section": "Bibliography",
-    "text": "Bibliography\nOnce you have created a .bib file with your references, you can add a bibliography to your Quarto document using bibliography: YAML metadata field. E.g.,\n---\ntitle: \"demo\"\nbibliography: refs.bib\n---"
+    "text": "Bibliography\n\nOnce you have created a .bib file with your references, you can add a bibliography to your Quarto document using the bibliography: YAML metadata field. E.g.,\n\n---\ntitle: \"demo\"\nformat: pdf\nbibliography: refs.bib\n---"
   },
   {
     "objectID": "intro_to_quarto.html#citation-syntax",
@@ -368,7 +368,7 @@
     "href": "intro_to_quarto.html#citation-style",
     "title": "",
     "section": "Citation Style",
-    "text": "Citation Style\n\nThe default citation style is the Chicago Manual of Style\nCan change the style of your citation using the csl: metadata field in the YAML header\nYou may want to change the citation style based on personal preference or based on specified requirements (e.g., academic journal, class project, etc.)\nE.g.,\n\n---\ntitle: \"demo\"\nbibliography: refs.bib\ncsl: nature.csl\n---"
+    "text": "Citation Style\n\nThe default citation style is the Chicago Manual of Style\nCan change the style of your citation using the csl: metadata field in the YAML header\nYou may want to change the citation style based on personal preference or based on specified requirements (e.g., academic journal, class project, etc.)\nE.g.,\n\n---\ntitle: \"demo\"\nformat: pdf\nbibliography: refs.bib\ncsl: nature.csl\n---"
   },
   {
     "objectID": "intro_to_quarto.html#citation-style-1",
@@ -404,5 +404,12 @@
     "title": "",
     "section": "References",
     "text": "References\n\n\nAitchison, J., and C. G. G Aitken. 1976. “Multivariate Binary Discrimination by the Kernel Method.” Biometrica 63: 413–20.\n\n\nBravo, F., K. P. Huynh, and D. T. Jacho-Chávez. 2011. “Average Derivative Estimation with Missing Responses.” In Missing Data Methods: Cross-Sectional Methods and Applications, edited by D. M. Drukker, 1st ed., 27A:129–54. Emerald Group Publishing Limited.\n\n\nLi, Qi, and Jeffrey S. Racine. 2007. Nonparametric Econometrics. Princeton, NJ: Princeton University Press.\n\n\nPosit. 2025. “Quarto Guide.” https://quarto.org/docs/guide/.\n\n\nRacine, Jeffrey. 2017. “Energy, Economics & Replication.” Department of Economics Working Papers 2017-02. McMaster University. https://ideas.repec.org/p/mcm/deptwp/2017-02.html.\n\n\nYihui Xie, Emily Riederer, Christophe Dervieux. 2024. “10.1 the Function Knitr::kable() | r Markdown Cookbook.” https://bookdown.org/yihui/rmarkdown-cookbook/kable.html.\n\n\nZhu, Hao. 2024a. “Create Awesome LaTeX Table with Knitr::kable and kableExtra.” 2024. https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf.\n\n\n———. 2024b. “Create Awesome HTML Table with Knitr::kable and kableExtra.” https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html."
+  },
+  {
+    "objectID": "intro_to_quarto.html#when-to-use-latex-directly",
+    "href": "intro_to_quarto.html#when-to-use-latex-directly",
+    "title": "",
+    "section": "When to Use LaTeX Directly?",
+    "text": "When to Use LaTeX Directly?\n\nJournal specific LaTeX formatting\n\nCan instruct quarto to use a custom template\nOr extract .tex file using keep-tex: true in YAML heading\n\n\n\n\nFine-tuned LaTeX customization"
   }
 ]

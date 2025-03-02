@@ -476,32 +476,32 @@
 <tr class="odd">
 <td style="text-align: left; min-width: 1.3in;">LaTeX</td>
 <td style="text-align: left;">Typesetting System</td>
-<td style="text-align: left;">High-quality academic documents</td>
+<td style="text-align: left; max-width: 2.5in;">High-quality academic documents</td>
 <td style="text-align: left;">PDF, Beamer</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; min-width: 1.3in;">Sweave</td>
 <td style="text-align: left;">Literate Programming Tool</td>
-<td style="text-align: left;">Embedding R code in LaTeX</td>
+<td style="text-align: left; max-width: 2.5in;">Embedding R code in LaTeX</td>
 <td style="text-align: left;">PDF, Beamer</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; min-width: 1.3in;">R Markdown</td>
 <td style="text-align: left;">Reproducible Reporting System</td>
-<td style="text-align: left;">Dynamic reports with R</td>
-<td style="text-align: left;">HTML, PDF, Word, etc.</td>
+<td style="text-align: left; max-width: 2.5in;">Dynamic reports with R</td>
+<td style="text-align: left;">HTML, PDF, Word, Beamer, PPTX</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; min-width: 1.3in;">Bookdown</td>
 <td style="text-align: left;">Reproducible Publishing System</td>
-<td style="text-align: left;">Writing books, theses, and long-form documents</td>
-<td style="text-align: left;">HTML, PDF, EPUB, Word, etc.</td>
+<td style="text-align: left; max-width: 2.5in;">Writing books, theses, and long-form documents</td>
+<td style="text-align: left;">HTML, PDF, Word, Beamer, PPTX, EPUB, etc.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; min-width: 1.3in;">Quarto</td>
 <td style="text-align: left;">Reproducible Publishing System</td>
-<td style="text-align: left;">Multi-language scientific publishing (reports, books, blogs, presentations)</td>
-<td style="text-align: left;">HTML, PDF, Word, PPTX, EPUB, etc.</td>
+<td style="text-align: left; max-width: 2.5in;">Multi-language scientific publishing (reports, books, blogs, presentations)</td>
+<td style="text-align: left;">HTML, PDF, Word, Beamer, PPTX, EPUB, etc.</td>
 </tr>
 </tbody>
 </table>
@@ -654,7 +654,7 @@
 <li>Metadata: data about data</li>
 </ul>
 
-<img data-src="images/yaml_1.png" class="r-stretch"><ul>
+<img data-src="images/yaml_1.png" data-fig.align="center" class="r-stretch"><ul>
 <li class="fragment">The header at the top of the document contains metadata settings</li>
 <li class="fragment">Defines title, author, date, format, options, and more</li>
 </ul>
@@ -664,10 +664,10 @@
 <ul>
 <li>Similar to the <em>preamble</em> of a LaTeX document</li>
 </ul>
-<table class="caption-top" style="width:97%;">
+<table class="caption-top" style="width:96%;">
 <colgroup>
 <col style="width: 51%">
-<col style="width: 45%">
+<col style="width: 44%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -714,10 +714,10 @@
 <section id="text-content-1" class="slide level2">
 <h2>Text Content</h2>
 <h3 id="headings">Headings</h3>
-<table class="caption-top" style="width:72%;">
+<table class="caption-top" style="width:71%;">
 <colgroup>
 <col style="width: 38%">
-<col style="width: 33%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -740,10 +740,10 @@
 <section id="text-content-2" class="slide level2">
 <h2>Text Content</h2>
 <h3 id="lists">Lists</h3>
-<table class="caption-top" style="width:64%;">
+<table class="caption-top" style="width:62%;">
 <colgroup>
 <col style="width: 34%">
-<col style="width: 29%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -957,7 +957,7 @@
 <li>The markdown syntax for adding an image is <code>![caption](FilePath)</code></li>
 </ul>
 <ul>
-<li class="fragment">E.g.,<code>![University of Winnipeg Logo](logo.png)</code></li>
+<li class="fragment">E.g., <code>![University of Winnipeg Logo](logo.png)</code></li>
 </ul>
 </section>
 <section id="figures-and-tables-3" class="slide level2">
@@ -1123,19 +1123,25 @@
 <section id="referencing-and-citations" class="slide level2">
 <h2>Referencing and Citations</h2>
 <ul>
-<li>An important aspect of academic writing is citing work that is not your own. Quarto documents can generate citations and bibliographies using BibLaTeX <code>.bib</code> or BibTeX <code>.bibtex</code> files.</li>
+<li>An important aspect of academic writing is citing work that is not your own.</li>
 </ul>
 <ul>
-<li class="fragment">Note,do not use a “:” in your citation key for a reference. Only use “-” or “_”. For example <code>smith_2024</code>.</li>
+<li class="fragment">Quarto documents can generate citations and bibliographies using BibLaTeX <code>.bib</code> or BibTeX <code>.bibtex</code> files.</li>
+</ul>
+<ul>
+<li class="fragment">Note, do not use a “:” in your citation key for a reference. Only use “-” or “_”. For example <code>smith_2024</code>.</li>
 </ul>
 </section>
 <section id="bibliography" class="slide level2">
 <h2>Bibliography</h2>
-<p>Once you have created a <code>.bib</code> file with your references, you can add a bibliography to your Quarto document using <code>bibliography:</code> YAML metadata field. E.g.,</p>
-<pre><code>---
-title: "demo"
-bibliography: refs.bib
----</code></pre>
+<ul>
+<li>Once you have created a <code>.bib</code> file with your references, you can add a bibliography to your Quarto document using the <code>bibliography:</code> YAML metadata field. E.g.,</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>---</span>
+<span id="cb11-2"><a></a>title: "demo"</span>
+<span id="cb11-3"><a></a>format: pdf</span>
+<span id="cb11-4"><a></a>bibliography: refs.bib</span>
+<span id="cb11-5"><a></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="citation-syntax" class="slide level2">
 <h2>Citation Syntax</h2>
@@ -1207,9 +1213,10 @@ bibliography: refs.bib
 </ul>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource quarto number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>---</span>
 <span id="cb12-2"><a></a>title: "demo"</span>
-<span id="cb12-3"><a></a>bibliography: refs.bib</span>
-<span id="cb12-4"><a></a>csl: nature.csl</span>
-<span id="cb12-5"><a></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a></a>format: pdf</span>
+<span id="cb12-4"><a></a>bibliography: refs.bib</span>
+<span id="cb12-5"><a></a>csl: nature.csl</span>
+<span id="cb12-6"><a></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="citation-style-1" class="slide level2">
 <h2>Citation Style</h2>
@@ -1227,8 +1234,8 @@ bibliography: refs.bib
 <span id="cb13-4"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="advantagesdisadvantages-of-quarto" class="title-slide slide level1 center">
-<h1>Advantages/Disadvantages of Quarto</h1>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
 
 </section>
 <section id="advantages-of-quarto" class="slide level2">
@@ -1246,8 +1253,20 @@ bibliography: refs.bib
 </ul>
 </div>
 </section>
-<section id="disadvantsages-of-quarto" class="slide level2">
-<h2>Disadvantsages of Quarto</h2>
+<section id="when-to-use-latex-directly" class="slide level2">
+<h2>When to Use LaTeX Directly?</h2>
+<ul>
+<li><p>Journal specific LaTeX formatting</p>
+<ul>
+<li class="fragment">Can instruct quarto to use a custom template</li>
+<li class="fragment">Or extract <code>.tex</code> file using <code>keep-tex: true</code> in YAML heading</li>
+</ul></li>
+</ul>
+<div>
+<ul>
+<li class="fragment">Fine-tuned LaTeX customization</li>
+</ul>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>

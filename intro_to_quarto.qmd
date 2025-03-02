@@ -20,28 +20,21 @@ nocite: |
 
 <hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
 
-::: columns
-
+:::::: columns
 ::: column
 **Luc Clair**\
 [***l.clair\@uwinnipeg.ca***]{style="font-size:0.75em;"}\
 [Universiry of Winnipeg]{style="font-size:0.75em;"}
 
 March 3, 2025
-
 :::
 
-::: column
-
-:::{.nostretch}
-
-![](adobe-express-qr-code.png){width=30%}
+:::: column
+::: nostretch
+![](adobe-express-qr-code.png){width="30%"}
 :::
-
-
-:::
-
-:::
+::::
+::::::
 
 # Introduction {.title-slide}
 
@@ -90,9 +83,9 @@ software_table <- data.frame(
   "Output Formats" = c(
     "PDF, Beamer", 
     "PDF, Beamer", 
-    "HTML, PDF, Word, etc.", 
-    "HTML, PDF, EPUB, Word, etc.", 
-    "HTML, PDF, Word, PPTX, EPUB, etc."
+    "HTML, PDF, Word, Beamer, PPTX", 
+    "HTML, PDF, Word, Beamer, PPTX, EPUB, etc.", 
+    "HTML, PDF, Word, Beamer, PPTX, EPUB, etc."
   ),
 check.names = FALSE  
 )
@@ -100,7 +93,8 @@ check.names = FALSE
 # Generate the table using kable
 kable(software_table)|>
   kable_styling(bootstrap_options = c("striped"), font_size = 20)|>
-  column_spec(1,width_min = "1.3in")
+  column_spec(1,width_min = "1.3in")|>
+  column_spec(3,width_max = "2.5in")
 
 ```
 
@@ -220,7 +214,7 @@ kbl(tbl_img, format = "pipe", align = c("c","c","c")) |>
 
 -   Metadata: data about data
 
-![](images/yaml_1.png)
+![](images/yaml_1.png){fig.align="center"}
 
 > -   The header at the top of the document contains metadata settings
 > -   Defines title, author, date, format, options, and more
@@ -229,20 +223,20 @@ kbl(tbl_img, format = "pipe", align = c("c","c","c")) |>
 
 -   Similar to the *preamble* of a LaTeX document
 
-+------------------------------------+--------------------------------+
-| LaTeX                              | Quarto                         |
-+====================================+================================+
-| ``` latex                          | ``` quarto                     |
-| \documentclass[11pt,reqno]{amsart} | ---                            |
-| \title{My Document}                | title: "My Document"           |
-| \date{March 3, 2025}               | date: "March 3, 2025"          |
-| \author{John Doe}                  | author: "John Doe"             |
-| \begin{document}                   | bibliography:mybib.bib         |
-| \section{Introduction}             | format: pdf                    |
-| \bibliography{mybib}               | ---                            |
-| \end{document}                     | # Introduction                 |
-| ```                                | ```                            |
-+------------------------------------+--------------------------------+
++------------------------------------+-------------------------------+
+| LaTeX                              | Quarto                        |
++====================================+===============================+
+| ``` latex                          | ``` quarto                    |
+| \documentclass[11pt,reqno]{amsart} | ---                           |
+| \title{My Document}                | title: "My Document"          |
+| \date{March 3, 2025}               | date: "March 3, 2025"         |
+| \author{John Doe}                  | author: "John Doe"            |
+| \begin{document}                   | bibliography:mybib.bib        |
+| \section{Introduction}             | format: pdf                   |
+| \bibliography{mybib}               | ---                           |
+| \end{document}                     | # Introduction                |
+| ```                                | ```                           |
++------------------------------------+-------------------------------+
 
 ## Text Content
 
@@ -257,35 +251,35 @@ kbl(tbl_img, format = "pipe", align = c("c","c","c")) |>
 
 ### Headings
 
-+---------------------------+-----------------------+
-| LaTeX                     | Quarto                |
-+===========================+=======================+
-| ``` latex                 | ``` quarto            |
-| \section{Heading 1}       | # Heading 1           |
-| \subsection{Heading 2}    | ## Heading 2          |
-| \subsubsection{Heading 3} | ### Heading 3         |
-| ```                       | ```                   |
-+---------------------------+-----------------------+
++---------------------------+----------------------+
+| LaTeX                     | Quarto               |
++===========================+======================+
+| ``` latex                 | ``` quarto           |
+| \section{Heading 1}       | # Heading 1          |
+| \subsection{Heading 2}    | ## Heading 2         |
+| \subsubsection{Heading 3} | ### Heading 3        |
+| ```                       | ```                  |
++---------------------------+----------------------+
 
 ## Text Content
 
 ### Lists
 
-+------------------------+--------------------+
-| LaTeX                  | Quarto             |
-+========================+====================+
-| ``` latex              | ``` quarto         |
-| \begin{itemize}        | - Item 1           |
-|   \item Item 1         | - Item 2           |
-|   \item Item 2         |     - Sub-item 1   |
-|     \begin{itemize}    |     - Sub-item 2   |
-|       \item Sub-item 1 | - Item 3           |
-|       \item Sub-item 2 | ```                |
-|     \end{itemize}      |                    |
-|   \item Item 3         |                    |
-| \end{itemize}          |                    |
-| ```                    |                    |
-+------------------------+--------------------+
++------------------------+-------------------+
+| LaTeX                  | Quarto            |
++========================+===================+
+| ``` latex              | ``` quarto        |
+| \begin{itemize}        | - Item 1          |
+|   \item Item 1         | - Item 2          |
+|   \item Item 2         |     - Sub-item 1  |
+|     \begin{itemize}    |     - Sub-item 2  |
+|       \item Sub-item 1 | - Item 3          |
+|       \item Sub-item 2 | ```               |
+|     \end{itemize}      |                   |
+|   \item Item 3         |                   |
+| \end{itemize}          |                   |
+| ```                    |                   |
++------------------------+-------------------+
 
 ## Text Content
 
@@ -432,7 +426,7 @@ hist(x,
 
 -   The markdown syntax for adding an image is `![caption](FilePath)`
 
-> -   E.g.,`![University of Winnipeg Logo](logo.png)`
+> -   E.g., `![University of Winnipeg Logo](logo.png)`
 
 ## Figures and Tables
 
@@ -574,17 +568,20 @@ knitr::kable(d,
 
 ## Referencing and Citations
 
--   An important aspect of academic writing is citing work that is not your own. Quarto documents can generate citations and bibliographies using BibLaTeX `.bib` or BibTeX `.bibtex` files.
+-   An important aspect of academic writing is citing work that is not your own.
 
-> -   Note,do not use a ":" in your citation key for a reference. Only use "-" or "\_". For example `smith_2024`.
+> -   Quarto documents can generate citations and bibliographies using BibLaTeX `.bib` or BibTeX `.bibtex` files.
+
+> -   Note, do not use a ":" in your citation key for a reference. Only use "-" or "\_". For example `smith_2024`.
 
 ## Bibliography
 
-Once you have created a `.bib` file with your references, you can add a bibliography to your Quarto document using `bibliography:` YAML metadata field. E.g.,
+-   Once you have created a `.bib` file with your references, you can add a bibliography to your Quarto document using the `bibliography:` YAML metadata field. E.g.,
 
-```         
+``` quarto
 ---
 title: "demo"
+format: pdf
 bibliography: refs.bib
 ---
 ```
@@ -630,6 +627,7 @@ For in-text citations, simply write `@cite-key`.
 ``` quarto
 ---
 title: "demo"
+format: pdf
 bibliography: refs.bib
 csl: nature.csl
 ---
@@ -652,7 +650,7 @@ For more citation styles, please visit: <https://www.zotero.org/styles>
 :::
 ```
 
-# Advantages/Disadvantages of Quarto
+# Summary
 
 ## Advantages of Quarto
 
@@ -666,7 +664,16 @@ For more citation styles, please visit: <https://www.zotero.org/styles>
 -   Easy table creation
 :::
 
-## Disadvantsages of Quarto
+## When to Use LaTeX Directly?
+
+-   Journal specific LaTeX formatting
+
+    > -   Can instruct quarto to use a custom template
+    > -   Or extract `.tex` file using `keep-tex: true` in YAML heading
+
+::: incremental
+-   Fine-tuned LaTeX customization
+:::
 
 ## References
 
