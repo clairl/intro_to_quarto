@@ -223,20 +223,20 @@ kbl(tbl_img, format = "pipe", align = c("c","c","c")) |>
 
 -   Similar to the *preamble* of a LaTeX document
 
-+------------------------------------+-------------------------------+
-| LaTeX                              | Quarto                        |
-+====================================+===============================+
-| ``` latex                          | ``` quarto                    |
-| \documentclass[11pt,reqno]{amsart} | ---                           |
-| \title{My Document}                | title: "My Document"          |
-| \date{March 3, 2025}               | date: "March 3, 2025"         |
-| \author{John Doe}                  | author: "John Doe"            |
-| \begin{document}                   | bibliography:mybib.bib        |
-| \section{Introduction}             | format: pdf                   |
-| \bibliography{mybib}               | ---                           |
-| \end{document}                     | # Introduction                |
-| ```                                | ```                           |
-+------------------------------------+-------------------------------+
++------------------------------------+------------------------+
+| LaTeX                              | Quarto                 |
++====================================+========================+
+| ``` latex                          | ``` quarto             |
+| \documentclass[11pt,reqno]{amsart} | ---                    |
+| \title{My Document}                | title: "My Document"   |
+| \date{March 3, 2025}               | date: "March 3, 2025"  |
+| \author{John Doe}                  | author: "John Doe"     |
+| \begin{document}                   | bibliography:mybib.bib |
+| \section{Introduction}             | format: pdf            |
+| \bibliography{mybib}               | ---                    |
+| \end{document}                     | # Introduction         |
+| ```                                | ```                    |
++------------------------------------+------------------------+
 
 ## Text Content
 
@@ -251,51 +251,46 @@ kbl(tbl_img, format = "pipe", align = c("c","c","c")) |>
 
 ### Headings
 
-+---------------------------+----------------------+
-| LaTeX                     | Quarto               |
-+===========================+======================+
-| ``` latex                 | ``` quarto           |
-| \section{Heading 1}       | # Heading 1          |
-| \subsection{Heading 2}    | ## Heading 2         |
-| \subsubsection{Heading 3} | ### Heading 3        |
-| ```                       | ```                  |
-+---------------------------+----------------------+
++---------------------------+---------------+
+| LaTeX                     | Quarto        |
++===========================+===============+
+| ``` latex                 | ``` quarto    |
+| \section{Heading 1}       | # Heading 1   |
+| \subsection{Heading 2}    | ## Heading 2  |
+| \subsubsection{Heading 3} | ### Heading 3 |
+| ```                       | ```           |
++---------------------------+---------------+
 
 ## Text Content
 
 ### Lists
 
-+------------------------+-------------------+
-| LaTeX                  | Quarto            |
-+========================+===================+
-| ``` latex              | ``` quarto        |
-| \begin{itemize}        | - Item 1          |
-|   \item Item 1         | - Item 2          |
-|   \item Item 2         |     - Sub-item 1  |
-|     \begin{itemize}    |     - Sub-item 2  |
-|       \item Sub-item 1 | - Item 3          |
-|       \item Sub-item 2 | ```               |
-|     \end{itemize}      |                   |
-|   \item Item 3         |                   |
-| \end{itemize}          |                   |
-| ```                    |                   |
-+------------------------+-------------------+
++------------------------+------------------+
+| LaTeX                  | Quarto           |
++========================+==================+
+| ``` latex              | ``` quarto       |
+| \begin{itemize}        | - Item 1         |
+|   \item Item 1         | - Item 2         |
+|   \item Item 2         |     - Sub-item 1 |
+|     \begin{itemize}    |     - Sub-item 2 |
+|       \item Sub-item 1 | - Item 3         |
+|       \item Sub-item 2 | ```              |
+|     \end{itemize}      |                  |
+|   \item Item 3         |                  |
+| \end{itemize}          |                  |
+| ```                    |                  |
++------------------------+------------------+
 
 ## Text Content
 
 ### Text formatting
 
-+-------------------------------------------+-----------------------------------------+
-| Quarto                                    | Output                                  |
-+===========================================+=========================================+
+| Quarto | Output |
+|----|----|
 | `*italics*, **bold**, ***bold italics***` | *italics*, **bold**, ***bold italics*** |
-+-------------------------------------------+-----------------------------------------+
-| `superscripts^2^/subscripts~2~`           | superscripts^2^ / subscripts~2~         |
-+-------------------------------------------+-----------------------------------------+
-| `~~strikethrough~~`                       | ~~strikethrough~~                       |
-+-------------------------------------------+-----------------------------------------+
-| `` `verbatim code` ``                     | `verbatim code`                         |
-+-------------------------------------------+-----------------------------------------+
+| `superscripts^2^/subscripts~2~` | superscripts^2^ / subscripts~2~ |
+| `~~strikethrough~~` | ~~strikethrough~~ |
+| `` `verbatim code` `` | `verbatim code` |
 
 ## Text Content
 
@@ -594,25 +589,19 @@ bibliography: refs.bib
 
 ## Citation Syntax
 
-+----------------------------------------------+--------------------------------------------+
-| Markdown Format                              | Output                                     |
-+==============================================+============================================+
+| Markdown Format | Output |
+|----|----|
 | Sample text `[see @bravo_2011, pp. 130-135]` | Sample text [see @bravo_2011, pp. 130-135] |
-+----------------------------------------------+--------------------------------------------+
 | Sample text `[@bravo_2011; @li_racine_2007]` | Sample text [@bravo_2011; @li_racine_2007] |
-+----------------------------------------------+--------------------------------------------+
 
 ## Citation Syntax
 
 For in-text citations, simply write `@cite-key`.
 
-+-----------------------------------------------+---------------------------------------------+
-| Markdown Format                               | Output                                      |
-+===============================================+=============================================+
-| `@aitchison_aitken_1976` developed...         | @aitchison_aitken_1976 developed...         |
-+-----------------------------------------------+---------------------------------------------+
+| Markdown Format | Output |
+|----|----|
+| `@aitchison_aitken_1976` developed... | @aitchison_aitken_1976 developed... |
 | `@aitchison_aitken_1976 [p.413]` developed... | @aitchison_aitken_1976 [p.413] developed... |
-+-----------------------------------------------+---------------------------------------------+
 
 ## Citation Style
 
