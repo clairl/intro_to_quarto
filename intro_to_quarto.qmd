@@ -31,12 +31,12 @@ March 3, 2025
 
 :::: column
 ::: nostretch
-![](adobe-express-qr-code.png){width="30%"}
+![](images/adobe-express-qr-code.png){width="30%"}
 :::
 ::::
 ::::::
 
-# Introduction  {.title-slide}
+# Introduction {.title-slide}
 
 <hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
 
@@ -44,8 +44,8 @@ March 3, 2025
 
 -   Quarto is an open-source tool designed for creating dynamic documents, reports, presentations, and websites
 
->-   It integrates with various programming languages and provides a unified framework for combining code, narrative text, and data visualization
->-   Quarto is particularly useful for data science, research, and technical communication
+> -   It integrates with various programming languages and provides a unified framework for combining code, narrative text, and data visualization
+> -   Quarto is particularly useful for data science, research, and technical communication
 
 ## Scientific Reports
 
