@@ -36,7 +36,7 @@ March 3, 2025
 ::::
 ::::::
 
-# Introduction {.title-slide}
+# Introduction  {.title-slide}
 
 <hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
 
@@ -285,12 +285,17 @@ kbl(tbl_img, format = "pipe", align = c("c","c","c")) |>
 
 ### Text formatting
 
-| Quarto | Output |
-|----|----|
++-------------------------------------------+-----------------------------------------+
+| Quarto                                    | Output                                  |
++===========================================+=========================================+
 | `*italics*, **bold**, ***bold italics***` | *italics*, **bold**, ***bold italics*** |
-| `superscripts^2^/subscripts~2~` | superscripts^2^ / subscripts~2~ |
-| `~~strikethrough~~` | ~~strikethrough~~ |
-| `` `verbatim code` `` | `verbatim code` |
++-------------------------------------------+-----------------------------------------+
+| `superscripts^2^/subscripts~2~`           | superscripts^2^ / subscripts~2~         |
++-------------------------------------------+-----------------------------------------+
+| `~~strikethrough~~`                       | ~~strikethrough~~                       |
++-------------------------------------------+-----------------------------------------+
+| `` `verbatim code` ``                     | `verbatim code`                         |
++-------------------------------------------+-----------------------------------------+
 
 ## Text Content
 
@@ -589,19 +594,25 @@ bibliography: refs.bib
 
 ## Citation Syntax
 
-| Markdown Format | Output |
-|----|----|
++----------------------------------------------+--------------------------------------------+
+| Markdown Format                              | Output                                     |
++==============================================+============================================+
 | Sample text `[see @bravo_2011, pp. 130-135]` | Sample text [see @bravo_2011, pp. 130-135] |
++----------------------------------------------+--------------------------------------------+
 | Sample text `[@bravo_2011; @li_racine_2007]` | Sample text [@bravo_2011; @li_racine_2007] |
++----------------------------------------------+--------------------------------------------+
 
 ## Citation Syntax
 
 For in-text citations, simply write `@cite-key`.
 
-| Markdown Format | Output |
-|----|----|
-| `@aitchison_aitken_1976` developed... | @aitchison_aitken_1976 developed... |
++-----------------------------------------------+---------------------------------------------+
+| Markdown Format                               | Output                                      |
++===============================================+=============================================+
+| `@aitchison_aitken_1976` developed...         | @aitchison_aitken_1976 developed...         |
++-----------------------------------------------+---------------------------------------------+
 | `@aitchison_aitken_1976 [p.413]` developed... | @aitchison_aitken_1976 [p.413] developed... |
++-----------------------------------------------+---------------------------------------------+
 
 ## Citation Style
 
