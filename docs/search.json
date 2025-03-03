@@ -11,7 +11,7 @@
     "href": "intro_to_quarto.html#introduction-1",
     "title": "",
     "section": "Introduction",
-    "text": "Introduction\n\nQuarto is an open-source tool designed for creating dynamic documents, reports, presentations, and websites\nIt integrates with various programming languages and provides a unified framework for combining code, narrative text, and data visualization\nQuarto is particularly useful for data science, research, and technical communication"
+    "text": "Introduction\n\nQuarto is an open-source tool designed for creating dynamic documents, reports, presentations, and websites\n\n\nIt integrates with various programming languages and provides a unified framework for combining code, narrative text, and data visualization\nQuarto is particularly useful for data science, research, and technical communication"
   },
   {
     "objectID": "intro_to_quarto.html#scientific-reports",
